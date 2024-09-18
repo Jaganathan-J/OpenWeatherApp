@@ -1,74 +1,52 @@
 OpenWeatherApp 🌤️
-A simple weather application built with Kotlin, Jetpack Compose, and Hilt for dependency injection. It fetches weather information using the OpenWeatherMap API based on user input for a city name or their current location.
 
-Features
-Display current weather details such as temperature, humidity, and weather description.
-Fetch weather data for any city by typing the city name.
-Use device's location to fetch weather data.
-Jetpack Compose for UI, utilizing Material3 design.
-Dependency Injection with Hilt.
-Networking with Retrofit.
-Image loading with Coil.
-Tech Stack
-Kotlin - Programming language.
-Jetpack Compose - For building the UI.
-Hilt - Dependency injection.
-Retrofit - Networking library for making API calls.
-Coil - Image loading library for Jetpack Compose.
-OpenWeatherMap API - For fetching weather data.
-Screenshots
-City Weather Search	Location-Based Weather
-Setup Instructions
-Prerequisites
-Android Studio (latest version).
-An OpenWeatherMap API key, which you can obtain by signing up at OpenWeatherMap.
-Getting Started
-Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/jagan/openweatherapp.git
-cd openweatherapp
-Open the project in Android Studio.
+Android Weather Forecast App implemented in MVVM Architecture using Kotlin that enables users to have instant access to weather data based on city name or current location.
 
-Add your OpenWeatherMap API key:
+Features:
 
-Open the WeatherUseCase.kt file in com.jagan.openweatherapp.data.usecase.
-Replace the apiKey variable with your own API key.
-kotlin
-Copy code
-private val apiKey = "YOUR_API_KEY"
-Sync the project with Gradle.
 
-Run the app on an emulator or your device.
+Simple and user-friendly UI.
 
-APIs Used
-OpenWeatherMap API - Used to get weather data based on city names and geolocation.
-Libraries Used
-Jetpack Compose: For declarative UI.
+Get current weather data by entering the city name.
+
+Fetch current weather based on device location (latitude and longitude).
+
+Weather information includes temperature, humidity, and weather description.
+
+Real-time weather data updates.
+
+Support for both Celsius and Fahrenheit temperature units.
+
+Modern design using Jetpack Compose and Material 3.
+
+
+Tech Stack:
+
+Jetpack Compose: For building declarative UI.
+
 Hilt: For dependency injection.
-Retrofit: For HTTP client requests.
-Coil: For loading images in Compose.
-Gson: For parsing JSON responses.
-Coroutines: For managing background tasks (async operations).
-How to Use
-City Weather Search: Enter the name of the city in the text field, and the app will display the current weather.
-Location-Based Weather: Press the "Use My Location" button to allow the app to fetch the weather based on your current location (requires location permission).
-Code Structure
-MainActivity: The main entry point of the app, handles UI and interactions.
-WeatherUseCase: Contains the business logic for interacting with the OpenWeatherMap API.
-WeatherViewModel: ViewModel for managing the UI state.
-WeatherService: Retrofit interface for API calls.
-AppModule: Dagger Hilt module that provides dependencies like Retrofit and WeatherService.
-Testing
-To run unit tests:
 
-bash
-Copy code
-./gradlew test
-Future Enhancements
-Add error handling for network issues.
-Add more detailed weather information like forecasts.
-Add dark mode support.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Retrofit: For making API calls.
+
+Coil: For image loading.
+
+Kotlin Coroutines: For managing background tasks.
+
+Libraries included:
+
+Retrofit for network calls.
+
+Gson for JSON parsing.
+
+Jetpack Compose for UI.
+
+Dagger Hilt for dependency injection.
+
+Coil for image loading in Compose.
+
+Note: You will need your own OpenWeatherMap API key. After obtaining it, place the key in the WeatherUseCase.kt file under com.jagan.openweatherapp.data.usecase:
+
+private val apiKey = "YOUR_API_KEY"
+
+
