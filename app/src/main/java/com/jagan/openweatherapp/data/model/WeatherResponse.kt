@@ -12,6 +12,6 @@ data class Weather(
 )
 
 data class Main(
-    val temp: Float,
+    var temp: Float,
     val humidity: Int
 )

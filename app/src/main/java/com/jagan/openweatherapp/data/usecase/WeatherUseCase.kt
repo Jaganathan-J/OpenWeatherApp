@@ -14,6 +14,7 @@ class WeatherUseCase @Inject constructor(
         return withContext(Dispatchers.IO) {
             try {
                 val response = weatherService.getWeather(cityName, apiKey)
+                response.main.temp = (response.main.temp - 273.15).toFloat()
                 Result.success(response)
             } catch (e: Exception) {
                 Result.failure(e) // Wrap the exception in a failure result
@@ -25,6 +26,7 @@ class WeatherUseCase @Inject constructor(
         return withContext(Dispatchers.IO) {
             try {
                 val response = weatherService.getWeatherByLocation(latitude, longitude, apiKey)
+                response.main.temp = (response.main.temp - 273.15).toFloat()
                 Result.success(response)
             } catch (e: Exception) {
                 Result.failure(e)  // Wrap the exception in a failure result
